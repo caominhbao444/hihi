@@ -4,21 +4,40 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Coin.css";
 import { faDownLong } from "@fortawesome/free-solid-svg-icons";
 import { faUpLong } from "@fortawesome/free-solid-svg-icons";
-import { Up } from "./SoFunc";
-import { Down } from "./SoFunc";
 const Coin = ({ coin }) => {
   return (
     <tr>
-      <td>{coin.id}</td>
-
-      <td className="d-flex justify-content-center">
-        <img className="imgCoin" src={coin.image} />
-        <Link style={{ textDecoration: "none" }} to={`/coins/${coin.id}`}>
-          <p style={{ color: "black" }}>{coin.name}</p>
-        </Link>
-
-        <span className="text-center">({coin.symbol})</span>
+      <td>{coin.market_cap_rank}</td>
+      <td>
+        <div className="d-flex justify-content-center">
+          <Link
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+            }}
+            to={`/coins/${coin.id}`}
+          >
+            <img className="imgCoin" src={coin.image} alt="{coin.image}" />
+            <p style={{ color: "black", marginBottom: 0 }}>{coin.name}</p>
+            <span className="text-center text-black ">({coin.symbol})</span>
+          </Link>
+        </div>
       </td>
+      {/* <td className="d-flex justify-content-center">
+        <img className="imgCoin" src={coin.image} />
+        <Link
+          style={{
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+          }}
+          to={`/coins/${coin.id}`}
+        >
+          <p style={{ color: "black", marginBottom: 0 }}>{coin.name}</p>
+          <span className="text-center text-black ">({coin.symbol})</span>
+        </Link>
+      </td> */}
 
       <td>${coin.current_price}</td>
       <td
@@ -33,8 +52,13 @@ const Coin = ({ coin }) => {
         )}
         {coin.price_change_percentage_24h}
       </td>
-      <td>
-        <Button>Buy</Button>
+      <td className="contact">
+        <Link to={`/coins/${coin.id}`}>
+          <Button className="buy">Buy</Button>
+        </Link>
+        <Link to={`/coins/${coin.id}`}>
+          <Button className="view">View</Button>
+        </Link>
       </td>
     </tr>
   );

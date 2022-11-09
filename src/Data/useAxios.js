@@ -16,7 +16,7 @@ const useAxios = (param) => {
       console.log(2);
     } catch (err) {
       setError(err);
-      console.log(2);
+      console.log(1);
     } finally {
       setLoading(false);
     }

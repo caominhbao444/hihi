@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBitcoin } from "@fortawesome/free-brands-svg-icons";
 const NavBar = () => {
   return (
-    <Navbar expand="lg" className="bg-light">
+    <Navbar expand="lg" className="bg-light fixed-top ">
       <Container>
         <Link style={{ textDecoration: "none" }} to="/">
           <Navbar.Brand>
@@ -21,11 +21,18 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link style={{ textDecoration: "none" }} to="/market">
+              <Nav.Link href="/market">Market</Nav.Link>
+            </Link>
+            <Link style={{ textDecoration: "none" }} to="/trend">
+              <Nav.Link href="/trend">Trend</Nav.Link>
+            </Link>
+
+            {/* <Link style={{ textDecoration: "none" }} to="/market">
               <Nav.Link>Market</Nav.Link>
             </Link>
             <Link style={{ textDecoration: "none" }} to="/trend">
               <Nav.Link>Trend</Nav.Link>
-            </Link>
+            </Link> */}
             <NavDropdown title="About Us" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1"></NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -39,8 +46,16 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav className="me-0">
-            <Nav.Link href="/Login">Login</Nav.Link>
-            <Button variant="outline-warning">Signup</Button>{" "}
+            <Link style={{ textDecoration: "none" }} to="/login">
+              <Nav.Link href="/Login">Login</Nav.Link>
+            </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/signup
+            "
+            >
+              <Button variant="outline-warning">Signup</Button>{" "}
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

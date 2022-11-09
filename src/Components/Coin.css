@@ -2,3 +2,17 @@
   max-width: 2rem;
   margin-right: 1em;
 }
+tr .contact {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.3rem;
+}
+tr .contact button {
+  background-color: var(--yellwo-color);
+  color: white;
+  border: none;
+}
+tr .contact button:hover {
+  background-color: white;
+  color: black;
+}

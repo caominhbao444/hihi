@@ -1,4 +1,5 @@
-body {
+#root {
+  padding: 0;
   margin: 0;
   font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
